@@ -28,16 +28,16 @@ public class UserController {
     }
     // 2. 사용자를 조회하는 컨트롤러를 만듭니다.
     // 이때 log.info를 이용하여 사용자의 ID를 출력해줍니다. return 값은 "사용자 조회"입니다.
-    @GetMapping("/{userID}")
-    public String getUser(@PathVariable long userID){
-        log.info("ID={}",userID );
+    @GetMapping("/{userId}")
+    public String getUser(@PathVariable long userId){
+        log.info("ID={}",userId );
         return "사용자 조회";
     }
 
     // 3. 사용자를 수정하는 컨트롤러를 만듭니다.
     // 이때 log.info를 이용를여 사용자의 이름, 주소를 출력해줍니다. return 값은 "사용자 수정"입니다.
-    @PutMapping("/{userID}")
-    public String updateUser(@PathVariable long userID, @RequestBody UpdateUserRequestDto updateUserRequestDto){
+    @PutMapping("/{userId}")
+    public String updateUser(@PathVariable long userId, @RequestBody UpdateUserRequestDto updateUserRequestDto){
         log.info("name={}", updateUserRequestDto.getName());
         log.info("address={}", updateUserRequestDto.getAddress());
         return "사용자 수정";
