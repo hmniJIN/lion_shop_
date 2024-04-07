@@ -17,18 +17,18 @@ public class OrderController {
         return "주문 생성하기";
     }
     // 2. 주문을 가져오는 컨트롤러를 만듭니다. 이때 return 값은 "주문 가져오기"입니다.
-    @GetMapping("/{userID}")
-    public String getOrder(@PathVariable long userID){
+    @GetMapping("/{orderID}")
+    public String getOrder(@PathVariable long orderID){
         return "주문 가져오기";
     }
     // 3. 주문을 수정하는 컨트롤러를 만듭니다. 이때 return 값은 "주문 수정하기"입니다.
-    @PutMapping("/{userID}")
-    public String updateOrder(@PathVariable long userID, @RequestBody UpdateOrderRequestDto updateOrderRequestDto){
+    @PutMapping("/{orderID}")
+    public String updateOrder(@PathVariable long orderID, @RequestBody UpdateOrderRequestDto updateOrderRequestDto){
         return "주문 수정하기";
     }
     // 4. 주문을 삭제하는 컨트롤러를 만듭니다. 이때 return 값은 "주문 삭제하기"입니다.
-    @DeleteMapping("/{userID}")
-    public String deleteOrder(@PathVariable long userID){
+    @DeleteMapping("/{orderID}")
+    public String deleteOrder(@PathVariable long orderID){
         return "주문 삭제하기";
     }
 
