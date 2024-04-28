@@ -11,5 +11,7 @@ public class UpdateUserRequestDto {
 
     public String name;
 
+    public String id;//userid
+
     public String address;
 }

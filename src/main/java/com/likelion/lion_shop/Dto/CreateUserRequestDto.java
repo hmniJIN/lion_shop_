@@ -1,5 +1,6 @@
 package com.likelion.lion_shop.Dto;
 
+import com.likelion.lion_shop.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,10 +12,21 @@ public class CreateUserRequestDto {
 
     public String name;
 
-    public String id;
+    public String id;//userid
 
     public String password;
 
     public String address;
+
+
+    //User Dto -> User Entity로 변환
+    public User toEntity(){
+        return User.builder()
+                .name(name)
+                .id(id)
+                .password(password)
+                .address(address)
+                .build();
+    }
 
 }
