@@ -14,7 +14,7 @@ import lombok.*;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long orderid;//Order의 pk값
+    private Long id;//Order의 pk값
 
     @Column
     public String name;

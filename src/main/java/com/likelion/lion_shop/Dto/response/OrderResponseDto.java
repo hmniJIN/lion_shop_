@@ -29,7 +29,7 @@ public class OrderResponseDto {
 
     public static OrderResponseDto from(Order order){
         return OrderResponseDto.builder()
-                .id(order.getOrderid())
+                .id(order.getId())
                 .name(order.getName())
                 .quantity(order.getQuantity())
                 .price(order.getPrice())

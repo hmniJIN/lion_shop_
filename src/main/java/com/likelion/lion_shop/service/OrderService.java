@@ -34,7 +34,7 @@ public class OrderService {
 
     //주문 수정하기
     public void updateOrder(UpdateOrderRequestDto updateOrderRequestDto) {
-        log.info("주문 수정하기, ID : {}", updateOrderRequestDto.getOrderid());
+        log.info("주문 수정하기, ID : {}", updateOrderRequestDto.getId());
 
         //임시
         Order order = new Order();

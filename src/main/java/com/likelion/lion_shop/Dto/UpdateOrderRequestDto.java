@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class UpdateOrderRequestDto {
 
     //상품 id
-    public Long orderid;
+    public Long id;
 
     //상품 이름
     public String name;
