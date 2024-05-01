@@ -1,5 +1,6 @@
 package com.likelion.lion_shop.Controller;
 
+import com.likelion.lion_shop.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import com.likelion.lion_shop.Dto.UpdateUserRequestDto;
 @RestController
 @RequestMapping("/user") // uri가 http://~/user로 시작하는 요청을 받습니다.
 public class UserController {
+
 
     // 1. 사용자를 생성하는 컨트롤러를 만듭니다.
     // 이때 log.info를 이용하여 사용자의 이름, 주소, ID, PW를 출력해줍니다. return 값은 "사용자 생성"입니다.
