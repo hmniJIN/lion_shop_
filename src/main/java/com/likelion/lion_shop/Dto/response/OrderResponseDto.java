@@ -1,6 +1,6 @@
 package com.likelion.lion_shop.Dto.response;
 
-import com.likelion.lion_shop.entity.Order;
+import com.likelion.lion_shop.entity.Orders;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -27,12 +27,12 @@ public class OrderResponseDto {
     public int quantity;
     public int price;
 
-    public static OrderResponseDto from(Order order){
+    public static OrderResponseDto from(Orders orders){
         return OrderResponseDto.builder()
-                .id(order.getId())
-                .name(order.getName())
-                .quantity(order.getQuantity())
-                .price(order.getPrice())
+                .id(orders.getId())
+                .name(orders.getName())
+                .quantity(orders.getQuantity())
+                .price(orders.getPrice())
                 .build();
     }
 }
