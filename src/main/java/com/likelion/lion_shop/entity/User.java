@@ -20,6 +20,9 @@ public class User {
     private String name;
 
     @Column
+    private String loginId;
+
+    @Column
     private String password;
 
     @Column
@@ -27,7 +30,7 @@ public class User {
 
     @Column
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Orders> orders;
+    private List<Order> orders;
 
     //Dto를 사용해 업데이트
     public void update(UpdateUserRequestDto updateUserRequestDto){

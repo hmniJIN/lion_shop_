@@ -1,8 +1,8 @@
 package com.likelion.lion_shop.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.likelion.lion_shop.entity.Orders;
+import com.likelion.lion_shop.entity.Order;
 
-public interface OrderRepository extends JpaRepository<Orders, Long>{
+public interface OrderRepository extends JpaRepository<Order, Long>{
 
 }

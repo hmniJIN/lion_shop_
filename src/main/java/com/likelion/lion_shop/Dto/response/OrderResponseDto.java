@@ -1,10 +1,13 @@
 package com.likelion.lion_shop.Dto.response;
 
-import com.likelion.lion_shop.entity.Orders;
+import com.likelion.lion_shop.entity.Order;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Getter//Dto-> Json으로 직렬화 시행시, 스프링 @Getter를 이용해 DTO 필드를 가져옴
 @Builder
@@ -26,13 +29,20 @@ public class OrderResponseDto {
     public String name;
     public int quantity;
     public int price;
+    public Long user;
 
-    public static OrderResponseDto from(Orders orders){
+    public static OrderResponseDto from(Order order){
         return OrderResponseDto.builder()
-                .id(orders.getId())
-                .name(orders.getName())
-                .quantity(orders.getQuantity())
-                .price(orders.getPrice())
+                .id(order.getId())
+                .name(order.getName())
+                .quantity(order.getQuantity())
+                .price(order.getPrice())
+                .user(order.getUser().getId())
                 .build();
+    }
+
+
+    public static List<OrderResponseDto> from(List<Order> orders) {
+        return orders.stream().map(OrderResponseDto::from).collect(Collectors.toList());
     }
 }
