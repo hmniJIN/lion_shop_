@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 public class UpdateUserRequestDto {
 
     public String name;
-
-    public Long id;//userid
+    
+    public Long id;
 
     public String address;
 }

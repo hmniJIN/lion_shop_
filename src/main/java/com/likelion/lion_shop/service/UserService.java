@@ -29,13 +29,11 @@ public class UserService {
     //사용자 가져오기
     public UserResponseDto getUser(Long id){
         User user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("사용자가 존재하지 않습니다."));
-
         return UserResponseDto.from(user);
     }
     //사용자 수정하기
-    public UserResponseDto updateUser(UpdateUserRequestDto updateUserRequestDto){
-        Long id = updateUserRequestDto.getId();
-        User user = userRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("존재하지 않는 사용자입니다."));
+    public UserResponseDto updateUser(UpdateUserRequestDto updateUserRequestDto, Long userId){
+        User user = userRepository.findById(userId).orElseThrow(()-> new IllegalArgumentException("존재하지 않는 사용자입니다."));
 
         user.update(updateUserRequestDto);
         userRepository.save(user);
