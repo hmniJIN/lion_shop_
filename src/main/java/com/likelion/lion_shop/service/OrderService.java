@@ -48,8 +48,8 @@ public class OrderService {
     }
 
     //주문 수정하기
-    public OrderResponseDto updateOrder(UpdateOrderRequestDto updateOrderRequestDto) {
-        Long orderId = updateOrderRequestDto.getId();
+    public OrderResponseDto updateOrder(UpdateOrderRequestDto updateOrderRequestDto, Long orderId) {
+        //Long orderId = updateOrderRequestDto.getId();
         Order order = orderRepository.findById(orderId).orElseThrow(()-> new IllegalArgumentException("존재하지 않는 주문입니다."));
 
         order.update(updateOrderRequestDto);//수정
