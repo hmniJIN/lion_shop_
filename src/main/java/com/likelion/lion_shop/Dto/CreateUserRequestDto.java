@@ -23,7 +23,7 @@ public class CreateUserRequestDto {
     public User toEntity(){
         return User.builder()
                 .name(name)
-                .id(id)
+                .loginId(id)
                 .password(password)
                 .address(address)
                 .build();

@@ -9,7 +9,7 @@ import lombok.*;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="order")
+@Table(name="orders")
 
 public class Order {
     @Id
@@ -17,11 +17,14 @@ public class Order {
     private Long id;//Order의 pk값
 
     @Column
-    public String name;
+    private String name;
     @Column
-    public int quantity;
+    private int quantity;
     @Column
-    public int price;
+    private int price;
+
+    @ManyToOne(fetch=FetchType.LAZY)
+    private User user;
 
     //Dto를 이용해 업데이트
     public void update(UpdateOrderRequestDto updateOrderRequestDto) {

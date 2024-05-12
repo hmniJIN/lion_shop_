@@ -3,6 +3,7 @@ package com.likelion.lion_shop.entity;
 import com.likelion.lion_shop.Dto.UpdateUserRequestDto;
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.List;
 
 @Entity
 @Builder
@@ -13,16 +14,23 @@ import lombok.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public String id;
+    private Long id;
 
     @Column
-    public String name;
+    private String name;
 
     @Column
-    public String password;
+    private String loginId;
 
     @Column
-    public String address;
+    private String password;
+
+    @Column
+    private String address;
+
+    @Column
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Order> orders;
 
     //Dto를 사용해 업데이트
     public void update(UpdateUserRequestDto updateUserRequestDto){
