@@ -1,6 +1,6 @@
 package com.likelion.lion_shop.entity;
 
-import com.likelion.lion_shop.Dto.UpdateOrderRequestDto;
+import com.likelion.lion_shop.Dto.request.UpdateOrderRequestDto;
 import jakarta.persistence.*;
 import lombok.*;
 

@@ -1,6 +1,6 @@
 package com.likelion.lion_shop.entity;
 
-import com.likelion.lion_shop.Dto.UpdateUserRequestDto;
+import com.likelion.lion_shop.Dto.request.UpdateUserRequestDto;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.List;
@@ -20,13 +20,16 @@ public class User {
     private String name;
 
     @Column
-    private String loginId;
+    private String email;
 
     @Column
     private String password;
 
     @Column
     private String address;
+
+    @Column
+    private String roles;
 
     @Column
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)

@@ -1,8 +1,8 @@
 package com.likelion.lion_shop.service;
 
 
-import com.likelion.lion_shop.Dto.CreateOrderRequestDto;
-import com.likelion.lion_shop.Dto.UpdateOrderRequestDto;
+import com.likelion.lion_shop.Dto.request.CreateOrderRequestDto;
+import com.likelion.lion_shop.Dto.request.UpdateOrderRequestDto;
 import com.likelion.lion_shop.Dto.response.OrderResponseDto;
 import com.likelion.lion_shop.Repository.OrderRepository;
 import com.likelion.lion_shop.Repository.UserRepository;

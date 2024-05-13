@@ -3,6 +3,9 @@ package com.likelion.lion_shop.Repository;
 import com.likelion.lion_shop.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Long>{
+import java.util.Optional;
 
+public interface UserRepository extends JpaRepository<User, Long>{
+    Optional<User> findByEmail(String email);
+    Optional<User> deleteByEmail(String email);
 }
