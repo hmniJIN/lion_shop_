@@ -1,4 +1,4 @@
-package com.likelion.lion_shop.Dto;
+package com.likelion.lion_shop.Dto.request;
 
 import com.likelion.lion_shop.entity.Order;
 import com.likelion.lion_shop.entity.User;

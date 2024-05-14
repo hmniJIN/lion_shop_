@@ -11,12 +11,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserResponseDto {
+    public String email;
     public Long id;
     public String name;
     public String address;
 
     public static UserResponseDto from(User user){
         return UserResponseDto.builder()
+                .email(user.getEmail())
                 .id(user.getId())
                 .name(user.getName())
                 .address(user.getAddress())
