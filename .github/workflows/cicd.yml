@@ -23,6 +23,7 @@ jobs:
       #Setting yml
       - name: make application.yml
         run: |
+         mkdir ./src/main/resources
          cd ./src/main/resources
          touch ./application.yml
          echo "${{ secrets.APPLICATION_YML }}" > ./application.yml
